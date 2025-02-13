@@ -8,3 +8,7 @@
     height: 320px;
     object-fit: cover;
 }
+
+.navbar {
+    background-color: #f2fcec;
+}
