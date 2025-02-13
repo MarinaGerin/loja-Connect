@@ -1,0 +1,10 @@
+.logo {
+    height: 70px;
+    width: 190px;
+}
+
+
+.card-img-top {
+    height: 320px;
+    object-fit: cover;
+}
