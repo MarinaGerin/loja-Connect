@@ -1,7 +1,9 @@
 -- criar banco
 create database loja; 
+go
 
 use loja;
+go
 
 create table Categoria 
 (
