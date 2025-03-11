@@ -41,5 +41,9 @@ public class Produto
     [Column(TypeName = "numeric(10,2)")]
     public decimal ValorVenda { get; set; }
 
-    public bool Destaque { get; set; }
+    public bool Destaque { get; set; } = false; 
+
+    public List<ProdutoFoto> Fotos { get; set; }
+
+
 }
