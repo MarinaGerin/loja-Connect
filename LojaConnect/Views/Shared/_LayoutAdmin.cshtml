@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>GStore - @ViewData["Title"]</title>
+    <title> connect | e-commerce @ViewData["Title"]</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/admin.css">
     <link rel="stylesheet" href="~/css/styles.css">
@@ -19,7 +19,7 @@
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand ">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" asp-controller="Admin" asp-action="Index">GStore</a>
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img class="logo" src="~/img/icons/connect.png" alt="logo"></a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 fs-4" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logado como:</div>
-                    José Antonio Gallo Jr
+                    Marina Gerin
                 </div>
             </nav>
         </div>
@@ -90,6 +90,8 @@
         crossorigin="anonymous"></script>
     <script src="~/js/admin.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <partial name="_Notification"></partial>
+
 </body>
 
 </html>
