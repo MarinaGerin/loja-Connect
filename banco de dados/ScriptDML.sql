@@ -98,11 +98,11 @@ Luminosidade: Meia sombra.
 Rega: 1 a 2 vezes por semana', 5, 8.00, 22.00, 1, 1);
 
 insert into ProdutoFoto (ProdutoId, Foto, Descricao) values 
-(1, 'img/produtos/1/Platycerum.png', null),
-(2, 'img/produtos/2/birkin.png', null),
-(3, 'img/produtos/3/begonia prateada.png', null),
-(4, 'img/produtos/4/begonia cruz.png', null),
-(5, 'img/produtos/5/calateia.png', null),
-(6, 'img/produtos/6/begonia sementacea.png', null),
-(7, 'img/produtos/7/tricolor.png', null),
-(8, 'img/produtos/8/asplenio.png', null);
+(1, '/img/produtos/1/Platycerum.png', null),
+(2, '/img/produtos/2/birkin.png', null),
+(3, '/img/produtos/3/begonia prateada.png', null),
+(4, '/img/produtos/4/begonia cruz.png', null),
+(5, '/img/produtos/5/calateia.png', null),
+(6, '/img/produtos/6/begonia sementacea.png', null),
+(7, '/img/produtos/7/tricolor.png', null),
+(8, '/img/produtos/8/asplenio.png', null);

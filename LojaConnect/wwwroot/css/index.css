@@ -4,6 +4,11 @@
     
 }
 
+.logo2 {
+    height: 100px;
+    width: 150px;
+    object-fit: contain;
+}
 
 .card-img-top {
     height: 250px;
