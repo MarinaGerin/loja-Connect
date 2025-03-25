@@ -1,5 +1,8 @@
 using LojaConnect.Data;
+using LojaConnect.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,12 +10,23 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Adicionar o serviço com o banco de dados 
-string conexao = builder.Configuration .GetConnectionString("LojaConexao"); 
+string conexao = builder.Configuration.GetConnectionString("LojaConexao");
 builder.Services.AddDbContext<AppDbContext>(
     options => options.UseSqlServer(conexao)
 );
 
+builder.Services.AddIdentity<Usuario, IdentityRole>(
+    options => options.SignIn.RequireConfirmedEmail = false   
+) .AddEntityFrameworkStores<AppDbContext>()
+.AddDefaultTokenProviders();
+
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await db.Database.EnsureCreatedAsync();
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
