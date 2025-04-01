@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace LojaConnect.Controllers;
 
+[Authorize(Roles = "Administrador")]
 public class AdminController : Controller
 {
     private readonly ILogger<AdminController> _logger;
