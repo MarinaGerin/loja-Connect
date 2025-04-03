@@ -136,9 +136,45 @@ public class AppDbSeed
 
         #region Populate Usuario
         List<Usuario> usuarios = new() {
-            new Usuario()[
-                
-            ]
+            new Usuario(){
+
+                Id = "ddf093a6-6cb5-9a64-83da34aee005",
+                Email = "mgerin2211@gmail.com",
+                NormalizedEmail = "MGERIN2211@GMAIL.COM",
+                UserName = "sol",
+                NormalizedUserName = "SOL",
+                LockoutEnabled = true,
+                EmailConfirmed = true,
+                Nome = "Marina Gerin",
+                DataNascimento = DateTime.Parse("22/11/2006"),
+                Foto = ""
+            }
+        };
+        foreach (var user in usuarios)
+        {
+            PasswordHasher<IdentityUser> pass = new();
+            user.PasswordHash = pass.HashPassword(user, "12345678");
         }
+        builder.Entity<Usuario>().HasData(usuarios);
+        #endregion
+
+        #region Populate UserRole - Usuário com Perfil
+        List<IdentityUserRole<string>> userRoles = new()
+        {
+            new IdentityUserRole<string>() {
+                UserId = usuarios[0].Id,
+                RoleId = roles[0].Id
+            },
+            new IdentityUserRole<string>() {
+                UserId = usuarios[0].Id,
+                RoleId = roles[1].Id
+            },
+            new IdentityUserRole<string>() {
+                UserId = usuarios[0].Id,
+                RoleId = roles[2].Id
+            }
+        };
+        builder.Entity<IdentityUserRole<string>>().HasData(userRoles);
+        #endregion
     }
 }
