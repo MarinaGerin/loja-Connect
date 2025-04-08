@@ -140,10 +140,18 @@ public class AccountController : Controller
                     await _db.SaveChangesAsync();
                  }
                  TempData["Success"] = "conta criada com sucesso!";
-
-
+                 return RedirectToAction(nameof(Login));
             }
+
+            foreach (var error in result.Errors)
+                ModelState.AddModelError(string.Empty, TranslateIdentityErrors.TranslateErrorMessage(error.Code));
         }
+        return View(registro);
+    }
+
+    public IActionResult AccessDenied() 
+    {
+        return View();
     }
 
     public bool IsValidEmail(string email)

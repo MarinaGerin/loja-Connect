@@ -50,7 +50,7 @@
                                     <input type="file" asp-for="Foto" accept=".jpg,.jpeg,.png,.gif,.jfif" />
                                 </div>
                             </div>
-                        </div>>
+                        </div>
 
                         <div class="d-flex flex-column aling-items-center justify-items-center mt-4 mb-0">
                             <input type="submit" class="btn btn-success w-100 mb-3" value="Criar Conta">
@@ -79,19 +79,19 @@
                 mensagemErro,
                 'error'
             );
+        }
+        function changeImage() {
+            document.querySelector('input[type="file"]').click();
+        }
 
-            function changeImage() {
-                document.querySelector('input[type="file"]').click();
-            }
+        window.addEventListener('load', function () {
+            document.querySelector('input[type="file"]').addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    var img = document.getElementById('PreviewImage');
+                    img.src = URL.createObjectURL(this.files[0]);
+                }
 
-            window.addEventListener('load', function () {
-                document.querySelector('input[type="file"]').addEventListener('change', function () {
-                    if (this.files && this.files[0]) {
-                        var img = document.getElementById('PreviewImage');
-                        img.src = URL.createObjectURL(this.files[0]);
-                    }
-
-                });
             });
+        });
     </script>
 }

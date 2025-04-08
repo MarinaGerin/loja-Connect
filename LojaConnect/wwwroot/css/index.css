@@ -1,32 +1,27 @@
 .logo {
-    height: 130px;
+    height: 120px;
     width: 200px;
     
 }
 
 .logo2 {
     height: 100px;
-    width: 150px;
+    width: 120px;
     object-fit: contain;
 }
 
 .card-img-top {
-    height: 250px;
+    height: 240px;
     object-fit: contain;
     padding: 20px;
 }
 
 .navbar, #layoutSidenav_nav {
-    background-color: #b4debe !important;
+    background-color: #dcf5e1 !important;
 }
 
 card-img-top:hover{
     transform: scale(1.2);
     transition-duration: 1.4s;
 
-}
-
-
-.bg-verdinho {
-    background-color: #dff2e9 !important;
 }

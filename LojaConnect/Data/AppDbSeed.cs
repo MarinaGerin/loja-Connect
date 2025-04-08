@@ -147,7 +147,7 @@ public class AppDbSeed
                 EmailConfirmed = true,
                 Nome = "Marina Gerin",
                 DataNascimento = DateTime.Parse("22/11/2006"),
-                Foto = "/img/sol.jpg"
+                Foto = "/img/usuario/sol.jpg"
             }
         };
         foreach (var user in usuarios)
